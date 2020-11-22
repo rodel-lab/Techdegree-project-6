@@ -26,14 +26,4 @@ const randomNum = Math.floor(Math.random() * phrases.length) //create a variable
 }
 getRandomPhraseAsArray(phrases) // After creating the getRandomPhraseAsArray, need to "call" it
 
-// Check if a letter is in the phrase
-const checkLetter = button => {
-    const li = document.getElementsByClassName('li')
-    const matchFound = null;
-    for (let i = 0; i < li.length; i++){
 
-    }
-    if () {
-       
-    }
-}
