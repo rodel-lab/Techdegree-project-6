@@ -20,10 +20,9 @@ btnreset.addEventListener('click', () => { //add eventlistener to a variable btn
 });
 
 // Create a getRandomPhraseAsArray function
-const getrandomPhraseAsArray = arr => { // create a function 'stub' taken from the Examples in pdf file
-const randomNum = Math.floor(Math.random() * phrases.length) //create a variable to store a random number
-    return getrandomPhraseAsArray(randomNum); //return the array element at that index
+const getRandomPhraseAsArray = arr => { // create a function 'stub' taken from the Examples in pdf file
+    const randomNum = Math.floor(Math.random() * phrases.length) //create a variable to store a random number
+     return phrases[randomNum]; //return the array element at that index
 }
-getRandomPhraseAsArray(phrases) // After creating the getRandomPhraseAsArray, need to "call" it
-
+const arrayPhrase = getRandomPhraseAsArray(phrases)// After creating the getRandomPhraseAsArray, need to "call" it
 
