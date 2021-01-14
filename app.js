@@ -1,28 +1,62 @@
-const overlay = document.getElementById('overlay')
 const qwerty = document.getElementById('qwerty');
 const phrase = document.getElementById('phrase');
 const btnreset = document.querySelector('.btn__reset');
+const overlay = document.getElementById('overlay')
+const ul = document.querySelector("#phrase ul")
 const missed = 0
 
 const phrases = [
-    'pull yourself together',
-    'a blessing in disquise',
-    'bite the bullet',
-    'the best of both worlds',
-    'by the skin of your teeth',
+    'hello world',
+    'treehouse techdegree',
+    'javascript',
+    'programming language',
+    'frontend developer'
 ];
 
 // Attach an eventlistener to the 'Start Game' buton to hid the start screen overlay
+
 // listen for the start game button to be pressed
-btnreset.addEventListener('click', () => { //add eventlistener to a variable btn_reset
-    overlay.style.display = 'none'; //hide the overlay by changing its display property
+btnreset.addEventListener('click', () => { 
+    overlay.style.display = 'none'; 
 
 });
 
-// Create a getRandomPhraseAsArray function
-const getRandomPhraseAsArray = arr => { // create a function 'stub' taken from the Examples in pdf file
-    const randomNum = Math.floor(Math.random() * phrases.length) //create a variable to store a random number
-     return phrases[randomNum]; //return the array element at that index
+//Create a getRandomPhraseAsArray function
+const getRandomPhraseAsArray = arr => { 
+    const randomNum = arr[Math.floor(Math.random() * arr.length)];
+     return randomNum.split('');    
 }
-const arrayPhrase = getRandomPhraseAsArray(phrases)// After creating the getRandomPhraseAsArray, need to "call" it
+getRandomPhraseAsArray(phrases);
+
+
+// Create an addPhraseToDisplay function
+const addPhraseToDisplay = arr => {
+    for( let i = 0; i < arr.length; i++ ){
+        const li = document.createElement('li');       
+        li.textContent = arr[i];        
+        ul.appendChild(li);
+        if(arr[i] !== ' '){
+            li.classList.add('letter');
+        } else {
+            li.classList.add('space')
+        } 
+    }  
+}    
+const phraseArray = getRandomPhraseAsArray(phrases);
+addPhraseToDisplay(phraseArray);
+
+// check is a letter is in the phrase
+const checkLetter = button => {
+    let liPhrase = ul.children;
+    let match = null;
+      for (let i = 0; i < liPhrase[i].length; i++){
+        const letter = liPhrase[i].textContent.toLowerCase();
+        if(button.textContent === letter) {
+            liPhrase[i].classList.add('show');
+            match = true;
+            }
+        }
+        return match;
+    }
+ checkLetter(qwerty);
 
