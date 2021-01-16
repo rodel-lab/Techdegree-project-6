@@ -53,6 +53,11 @@ button {
   -webkit-transition: var(--transition);
   -o-transition: var(--transition);
   transition: var(--transition);
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #adbfd4;
 }
 
 .main-container {
@@ -117,6 +122,13 @@ button {
   background: #FFFFFF;
   border-radius: 5px;
   font-size: var(--font-size-medium);
+}
+
+
+
+.btn__reset:hover {
+  background-color: lightgreen;
+  color: #445ce2;
 }
 
 /* Overlay */
