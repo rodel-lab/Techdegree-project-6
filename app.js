@@ -78,13 +78,14 @@ qwerty.addEventListener('click', e => {
     }
 });
 
-
+// Create a checkWin function
 const checkWin = (e) => {   
-    let letterPhrase = ul.getElementsByClassName('letter');
-    let showPhrase = ul.getElementsByClassName('show');
-    if(letterPhrase.length === showPhrase.length) {
+    let letter = ul.getElementsByClassName('letter');
+    let show = ul.getElementsByClassName('show');
+
+    if(letter.length === show.length) {
         overlay.classList.add('win');
-        overlay.querySelector('h2').textContent = "Congratulations! You've won!";
+        overlay.querySelector('h2').textContent = "Congratulations! You've won!";        
         overlay.style.display = 'flex';
         overlay.querySelector('a').textContent = 'Play Again!';
         resetGame();
